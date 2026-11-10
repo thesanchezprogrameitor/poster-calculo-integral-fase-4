@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Póster · Valorización de lactosuero regional</title>
+<meta name="description" content="Póster académico de la conferencia «Valorización de lactosuero regional» (Dra. Virginia Villa Cruz) y su relación con el cálculo integral. Cálculo Integral 100411, UNAD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>
+:root{
+  --paper:#F5F0E3; --paper-2:#ECE5D0; --card:#FBF8EF; --line:#D6CDB6;
+  --ink:#1B1F24; --muted:#575D65;
+  --graphite:#20252B; --graphite-2:#2A3138; --graphite-3:#3D4650;
+  --coral:#CF4F36; --coral-deep:#7A2416; --coral-soft:#F1CDBF;
+  --amber:#E7B12E; --whey:#EDE6A6; --whey-2:#CFC56A;
+  --teal:#1C6B70; --teal-light:#7CC4C0;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{font-size:clamp(6px,calc(100vw / 118),17px)}
+body{margin:0;background:#14171B;color:var(--ink);font-family:var(--sans);line-height:1.5;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;-webkit-text-size-adjust:100%}
+.poster{width:115rem;margin:1.5rem auto;background:var(--paper);overflow:hidden}
+p{margin:0 0 .8em}
+p:last-child{margin-bottom:0}
+a{color:inherit}
+em.sp{font-style:italic}
+
+/* ---------- Encabezado ---------- */
+.hero{background:var(--graphite);color:var(--paper);padding:1.6rem 3.5rem 3rem}
+.hero-top{display:flex;justify-content:space-between;gap:2rem;font-family:var(--mono);font-size:.88rem;
+  letter-spacing:.08em;text-transform:uppercase;color:#B9B3A2;border-bottom:1px solid var(--graphite-3);padding-bottom:1rem}
+.hero-main{margin-top:2.2rem}
+.hero-row{display:grid;grid-template-columns:1fr 21rem;gap:3rem;align-items:start}
+.kicker{font-family:var(--mono);font-size:.98rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin:0}
+h1{font-family:var(--serif);font-weight:600;font-size:7.4rem;line-height:1;letter-spacing:-.03em;margin:.6rem 0 1.4rem;white-space:nowrap}
+.sub{font-family:var(--serif);font-style:italic;font-size:1.9rem;line-height:1.3;color:#DDD7C5;max-width:58rem;margin:0}
+.sub i{font-style:normal}
+.speaker{margin:1.9rem 0 0;font-size:1.22rem;color:#DDD7C5;display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;align-items:baseline}
+.speaker b{color:var(--paper);font-weight:600;font-size:1.42rem}
+.speaker span+span::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--coral);margin-right:1.2rem;vertical-align:middle}
+.hero-art{width:100%;height:auto;display:block;align-self:end}
+
+/* ---------- Secciones ---------- */
+.sec{padding:2.7rem 3.5rem}
+.sec+.sec,.bottom{border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.4rem}
+.num{font-family:var(--mono);font-size:1.02rem;font-weight:500;color:var(--coral);letter-spacing:.05em}
+h2{font-family:var(--serif);font-weight:600;font-size:2.35rem;line-height:1.1;letter-spacing:-.01em;margin:0}
+h3{font-family:var(--mono);font-weight:500;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem}
+.g{display:grid;gap:2.6rem}
+.g-8-4{grid-template-columns:8fr 4fr}
+.g-6-6{grid-template-columns:1fr 1fr}
+.lead{font-size:1.16rem;columns:2;column-gap:2.6rem}
+
+/* Ficha del evento */
+.ficha{background:var(--card);border:1px solid var(--line);border-radius:.6rem;padding:1.3rem 1.5rem;font-size:1.02rem}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.2rem;margin:0}
+.ficha dt{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.2rem}
+.ficha dd{margin:0}
+.ficha a{color:var(--teal);word-break:break-all}
+
+/* Figura */
+figure{margin:0}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:.6rem;padding:1.3rem 1.3rem 1rem;display:flex;flex-direction:column;justify-content:center}
+.fig svg{display:block;width:100%;height:auto;font-family:var(--sans)}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.8rem;line-height:1.4}
+figcaption b{color:var(--ink);font-weight:600}
+
+/* Como funciona */
+.side-col{display:flex;flex-direction:column;justify-content:space-between;gap:2.2rem}
+.how{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem}
+.how li{display:grid;grid-template-columns:2.1rem 1fr;gap:.9rem;align-items:start;font-size:1.1rem}
+.badge{width:2.1rem;height:2.1rem;border-radius:50%;background:var(--ink);color:var(--paper);font-weight:600;font-size:1rem;
+  display:grid;place-items:center;font-family:var(--sans)}
+
+/* Procedimiento */
+.block{margin-top:2.4rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.steps li{position:relative;padding:1.3rem 1.1rem 0 0;border-top:2px solid var(--ink);font-size:1rem;line-height:1.42}
+.steps li::before{content:"";position:absolute;top:-.5rem;left:0;width:.85rem;height:.85rem;border-radius:50%;background:var(--coral);border:2px solid var(--paper)}
+.steps .k{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:.25rem}
+.steps b{display:block;font-size:1.14rem;font-weight:600;margin-bottom:.3rem}
+.days{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem}
+.days span{font-family:var(--mono);font-size:.88rem;border:1.5px solid var(--ink);border-radius:2rem;padding:.05rem .6rem;white-space:nowrap}
+
+/* Resultados */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:.6rem;padding:1.2rem 1.3rem 1.1rem;display:flex;flex-direction:column;justify-content:space-between;min-height:9rem}
+.tile .v{font-family:var(--serif);font-weight:600;font-size:2.9rem;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.tile .v small{font-size:1.3rem;font-weight:400;letter-spacing:0;margin-left:.2rem}
+.tile .v.t{font-size:1.75rem;line-height:1.1;letter-spacing:-.01em;white-space:normal}
+.tile .l{font-size:.98rem;color:var(--muted);margin-top:.9rem;line-height:1.35}
+.limits{background:var(--paper-2);border-radius:.6rem;padding:1.2rem 1.4rem;min-height:9rem;display:flex;align-items:center}
+.limits ul{margin:0;padding:0;list-style:none;display:grid;gap:.55rem;font-size:1.04rem}
+.limits li{padding-left:1.2rem;position:relative}
+.limits li::before{content:"";position:absolute;left:0;top:.7em;width:.55rem;height:2px;background:var(--coral)}
+
+/* ---------- Calculo integral ---------- */
+.calc{background:var(--graphite);color:var(--paper);border-top:0 !important}
+.calc h2{color:var(--paper)}
+.calc .num{color:var(--amber)}
+.calc h3{color:#B9B3A2}
+.calc-intro{font-size:1.2rem;color:#DDD7C5;max-width:74rem;margin-bottom:1.7rem}
+.calc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.4rem}
+.s4{grid-column:span 4}
+.s8{grid-column:span 8}
+.eqcard{background:var(--graphite-2);border:1px solid var(--graphite-3);border-radius:.7rem;padding:1.4rem 1.6rem 1.5rem;display:flex;flex-direction:column}
+.tag{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.eqcard h4{font-family:var(--serif);font-weight:600;font-size:1.6rem;line-height:1.15;margin:.3rem 0 .7rem}
+.eqcard p{font-size:1.05rem;color:#D5CFBD}
+.eq{background:#171B20;border-radius:.5rem;padding:.85rem .6rem;margin:.5rem 0 .85rem;text-align:center;font-size:1.2rem;color:var(--paper);overflow:hidden}
+.eq.hi{border:1px solid var(--amber)}
+.eq .katex-display{margin:0}
+.eqcard .tail{margin-top:auto}
+.calc .fig{background:var(--card);color:var(--ink);border:0}
+.fase{display:flex;flex-direction:column;gap:1.3rem}
+.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;flex:1}
+.prob{border:1px solid var(--graphite-3);border-top:3px solid var(--amber);border-radius:.3rem .3rem .7rem .7rem;padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column}
+.prob h4{font-family:var(--serif);font-weight:600;font-size:1.4rem;line-height:1.15;margin:.25rem 0 .6rem}
+.prob .d{font-size:1.02rem;color:#D5CFBD;margin:0 0 1rem}
+.prob .e{font-size:1.25rem;color:var(--paper);overflow:hidden;margin-top:auto}
+.prob .r{font-size:1.5rem;padding-top:.7rem;color:var(--amber)}
+.agua{background:#173236;border-left:4px solid var(--teal-light);border-radius:0 .5rem .5rem 0;padding:1.1rem 1.4rem;font-size:1.08rem;color:#DCEBEA;margin:0}
+.agua b{color:#fff;font-weight:600}
+
+/* ---------- Reflexion, conclusiones, referencias, creditos ---------- */
+.bottom{display:grid;grid-template-columns:4.5fr 4.5fr 4fr}
+.bottom>*+*{border-left:1px solid var(--line)}
+.bottom .sec{border-top:0}
+.reflex p{font-size:1.1rem}
+.reflex p:first-of-type{font-family:var(--serif);font-size:1.42rem;line-height:1.35}
+.concl{list-style:none;margin:0;padding:0;display:grid;gap:.9rem;counter-reset:c}
+.concl li{counter-increment:c;display:grid;grid-template-columns:1.6rem 1fr;gap:.7rem;font-size:1.1rem}
+.concl li::before{content:counter(c);font-family:var(--mono);font-size:.92rem;color:var(--coral);padding-top:.2rem}
+.side{display:flex;flex-direction:column}
+.side .refs{flex:1;padding:2.2rem 2.4rem 1.8rem}
+.refs p{font-size:.98rem;padding-left:1.4rem;text-indent:-1.4rem;margin-bottom:.7rem}
+.refs a{color:var(--teal);display:inline-block;text-indent:0;overflow-wrap:anywhere}
+.credits{background:var(--graphite);color:var(--paper);padding:1.8rem 2.4rem 2rem}
+.credits h2{color:var(--paper)}
+.credits .num{color:var(--amber)}
+.credits .name{font-family:var(--serif);font-weight:600;font-size:1.7rem;line-height:1.15;margin:0 0 .8rem}
+.credits ul{margin:0;padding:0;list-style:none;display:grid;gap:.3rem;font-size:1.03rem;color:#DDD7C5}
+.foot{background:#171B20;color:#8F897A;font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.9rem 3.5rem;display:flex;justify-content:space-between;gap:1rem}
+
+/* ---------- Movil ---------- */
+@media screen and (max-width:760px){
+  html{font-size:15px}
+  .poster{width:100%;margin:0}
+  .hero{padding:1.1rem 1.1rem 2rem}
+  .hero-top{flex-direction:column;gap:.3rem;font-size:.68rem}
+  .hero-main{margin-top:1.4rem}
+  .hero-row{grid-template-columns:1fr}
+  .hero-art{display:none}
+  h1{font-size:2.7rem;white-space:normal;line-height:1.02}
+  .sub{font-size:1.2rem}
+  .speaker{font-size:1rem;flex-direction:column}
+  .speaker span+span::before{display:none}
+  .sec{padding:1.9rem 1.1rem}
+  .g-8-4,.g-6-6,.bottom,.how,.probs{grid-template-columns:1fr}
+  .g{gap:1.6rem}
+  .lead{columns:1}
+  .calc-grid{display:flex;flex-direction:column}
+  .bottom>*+*{border-left:0;border-top:1px solid var(--line)}
+  .side .refs{padding:1.9rem 1.1rem}
+  .credits{padding:1.9rem 1.1rem}
+  .steps{grid-template-columns:1fr;gap:1.3rem}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile .v{font-size:2.1rem}
+  .tile .v.t{font-size:1.3rem}
+  .eq{overflow-x:auto;font-size:1rem}
+  .foot{flex-direction:column;padding:.8rem 1.1rem}
+}
+
+.foot a{color:var(--amber)}
+
+/* ---------- PDF ---------- */
+@page{size:1840px 3572px;margin:0}
+@media print{
+  html{font-size:16px}
+  body{background:#171B20}
+  .poster{width:1840px;height:3572px;margin:0;display:flex;flex-direction:column}
+  .poster>*{flex:none}
+  .poster>.bottom{flex:1}
+  .foot .pdf{display:none}
+}
+</style>
+</head>
+<body>
+<main class="poster">
+
+<!-- ================= TÍTULO ================= -->
+<header class="hero">
+  <div class="hero-top">
+    <span>Póster académico · Cálculo Integral 100411 · Fase 4</span>
+    <span>UNAD · ECBTI · V Jornada Internacional de Ingeniería Aplicada</span>
+  </div>
+  <div class="hero-main">
+    <p class="kicker">Conferencia magistral internacional · Cadena de Formación de Alimentos</p>
+    <h1>Valorización de lactosuero regional</h1>
+    <div class="hero-row">
+      <div>
+        <p class="sub">mediante <i>Geobacter sulfurreducens</i>: dinámica de crecimiento y formación de biopelícula sobre electrodos de grafito</p>
+        <p class="speaker"><span><b>Dra. Virginia Villa Cruz</b></span><span>Universidad de Guadalajara, México</span><span>5 de noviembre de 2026</span></p>
+      </div>
+      <svg class="hero-art" viewBox="0 62 368 188" aria-hidden="true">
+      <defs>
+        <g id="hb"><rect x="-34" y="-12" width="68" height="24" rx="12"/></g>
+      </defs>
+      <rect x="0" y="206" width="368" height="44" fill="#14171B"/>
+      <g stroke="#3D4650" stroke-width="1.5">
+        <path d="M0 220h368M0 234h368"/>
+      </g>
+      <g fill="none" stroke="#E7B12E" stroke-width="1.6" stroke-linecap="round">
+        <path d="M70 168c-6 14-2 26-8 38"/><path d="M92 172c4 12-2 22 4 34"/>
+        <path d="M186 156c-10 16 2 32-6 50"/><path d="M212 160c8 14-4 30 4 46"/><path d="M198 160c0 16 2 30-2 46"/>
+        <path d="M300 170c-4 12 4 24-2 36"/><path d="M322 166c8 12 0 26 6 40"/>
+      </g>
+      <g fill="#CF4F36" stroke="#F1CDBF" stroke-width="1.5">
+        <use href="#hb" transform="translate(82 152) rotate(-14)"/>
+        <use href="#hb" transform="translate(200 142) rotate(8)"/>
+        <use href="#hb" transform="translate(312 150) rotate(-6)"/>
+        <use href="#hb" transform="translate(138 96) rotate(24)" opacity=".85"/>
+        <use href="#hb" transform="translate(262 88) rotate(-20)" opacity=".85"/>
+        <use href="#hb" transform="translate(196 40) rotate(4)" opacity=".6"/>
+      </g>
+      <g fill="#E7B12E">
+        <circle cx="64" cy="190" r="4"/><circle cx="95" cy="196" r="4"/><circle cx="182" cy="184" r="4"/>
+        <circle cx="214" cy="190" r="4"/><circle cx="198" cy="176" r="4"/><circle cx="299" cy="192" r="4"/><circle cx="326" cy="188" r="4"/>
+      </g>
+    </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 01 INTRODUCCIÓN ================= -->
+<section class="sec" id="introduccion">
+  <div class="sec-head"><span class="num">01</span><h2>Introducción</h2></div>
+  <div class="g g-8-4">
+    <div class="lead">
+      <p>La conferencia hizo parte del ciclo de conferencias magistrales internacionales de la V Jornada Internacional de Ingeniería Aplicada y II Encuentro de Grupos y Semilleros de Investigación e Innovación de la UNAD. Se transmitió por YouTube el jueves 5 de noviembre de 2026.</p>
+      <p>La Dra. Virginia Villa Cruz parte de un problema ambiental: las queserías artesanales de Lagos de Moreno (Jalisco, México) vierten el lactosuero sin tratamiento, con lo que se contamina el ambiente y se desperdicia el residuo. Su propuesta es aprovecharlo en celdas de combustible microbiano, donde la bacteria <em class="sp">Geobacter sulfurreducens</em> se alimenta del suero y entrega electrones a un electrodo de grafito.</p>
+    </div>
+    <aside class="ficha">
+      <dl>
+        <dt>Video</dt><dd>«Conferencias Internacionales V Jornada de Ingeniería Aplicada ECBTI. Día 2», canal de la UNAD<br><a href="https://www.youtube.com/watch?v=tVbwd6a1TGc">youtube.com/watch?v=tVbwd6a1TGc</a></dd>
+        <dt>También</dt><dd>En la misma transmisión, el Dr. Arcadio Penagos Macías (Universidad Politécnica de Chiapas, México) presentó «Transición energética y tecnología sostenible».</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 02 CONTENIDO PRINCIPAL ================= -->
+<section class="sec" id="contenido">
+  <div class="sec-head"><span class="num">02</span><h2>Contenido principal</h2></div>
+
+  <div class="g g-6-6">
+    <figure class="fig">
+      <svg viewBox="0 0 800 440" role="img" aria-label="Esquema conceptual de una celda de combustible microbiano: dos electrodos sumergidos en lactosuero, un circuito externo y una vista ampliada de la bacteria sobre el grafito">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1B1F24"/></marker>
+          <clipPath id="zc"><circle cx="630" cy="225" r="140"/></clipPath>
+          <rect id="b" x="-10" y="-4.5" width="20" height="9" rx="4.5"/>
+        </defs>
+
+        <!-- líquido -->
+        <path d="M42 172H418V372a16 16 0 0 1-16 16H58a16 16 0 0 1-16-16Z" fill="#EDE6A6"/>
+        <!-- recipiente -->
+        <path d="M40 130V372a18 18 0 0 0 18 18H402a18 18 0 0 0 18-18V130" fill="none" stroke="#1B1F24" stroke-width="3"/>
+        <!-- circuito externo -->
+        <path d="M335 100V44H125V100" fill="none" stroke="#1B1F24" stroke-width="3"/>
+        <path d="M278 37l-12 7 12 7z M196 37l-12 7 12 7z" fill="#1B1F24"/>
+        <circle cx="230" cy="44" r="21" fill="#FBF8EF" stroke="#1B1F24" stroke-width="3"/>
+        <text x="230" y="50" text-anchor="middle" font-size="17" font-weight="600" fill="#1B1F24">V</text>
+        <g font-size="11" font-weight="600" text-anchor="middle" fill="#1B1F24">
+          <circle cx="302" cy="44" r="11" fill="#E7B12E" stroke="#1B1F24" stroke-width="1.5"/><text x="302" y="48">e⁻</text>
+          <circle cx="158" cy="44" r="11" fill="#E7B12E" stroke="#1B1F24" stroke-width="1.5"/><text x="158" y="48">e⁻</text>
+        </g>
+        <!-- electrodos -->
+        <rect x="105" y="98" width="40" height="262" rx="4" fill="#9AA0A6" stroke="#1B1F24" stroke-width="2.5"/>
+        <rect x="315" y="98" width="40" height="262" rx="4" fill="#20252B" stroke="#1B1F24" stroke-width="2.5"/>
+        <path d="M325 110v238M335 110v238M345 110v238" stroke="#3D4650" stroke-width="1.5"/>
+        <!-- tapa -->
+        <rect x="30" y="118" width="400" height="14" rx="4" fill="#3D4650"/>
+        <!-- biopelícula sobre el ánodo -->
+        <g fill="#CF4F36" stroke="#7A2416" stroke-width="1">
+          <use href="#b" transform="translate(366 190) rotate(-70)"/><use href="#b" transform="translate(367 208) rotate(-100)"/>
+          <use href="#b" transform="translate(366 227) rotate(-75)"/><use href="#b" transform="translate(367 246) rotate(-95)"/>
+          <use href="#b" transform="translate(366 265) rotate(-80)"/><use href="#b" transform="translate(367 284) rotate(-105)"/>
+          <use href="#b" transform="translate(366 303) rotate(-72)"/><use href="#b" transform="translate(367 322) rotate(-92)"/>
+          <use href="#b" transform="translate(366 341) rotate(-80)"/>
+          <use href="#b" transform="translate(379 218) rotate(-60)"/><use href="#b" transform="translate(380 256) rotate(-110)"/>
+          <use href="#b" transform="translate(379 296) rotate(-85)"/><use href="#b" transform="translate(380 330) rotate(-65)"/>
+          <use href="#b" transform="translate(304 190) rotate(70)"/><use href="#b" transform="translate(303 208) rotate(100)"/>
+          <use href="#b" transform="translate(304 227) rotate(75)"/><use href="#b" transform="translate(303 246) rotate(95)"/>
+          <use href="#b" transform="translate(304 265) rotate(80)"/><use href="#b" transform="translate(303 284) rotate(105)"/>
+          <use href="#b" transform="translate(304 303) rotate(72)"/><use href="#b" transform="translate(303 322) rotate(92)"/>
+          <use href="#b" transform="translate(304 341) rotate(80)"/>
+          <use href="#b" transform="translate(291 236) rotate(60)"/><use href="#b" transform="translate(290 276) rotate(110)"/>
+          <use href="#b" transform="translate(291 314) rotate(85)"/>
+        </g>
+        <!-- rótulos -->
+        <g font-size="14" fill="#1B1F24" text-anchor="middle">
+          <text x="215" y="252" font-weight="600" font-size="15">Lactosuero</text>
+          <text x="215" y="272">pH 6 a 6.5</text>
+          <text x="215" y="291">sin oxígeno</text>
+          <text x="125" y="414" font-weight="600">Cátodo</text>
+          <text x="335" y="414" font-weight="600">Ánodo: electrodo de grafito</text>
+          <text x="335" y="432">con biopelícula</text>
+        </g>
+
+        <!-- conexión con la vista ampliada -->
+        <circle cx="372" cy="262" r="26" fill="none" stroke="#1B1F24" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <path d="M380 237L540 118M380 287L540 332" stroke="#1B1F24" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
+
+        <!-- vista ampliada -->
+        <circle cx="630" cy="225" r="140" fill="#EDE6A6"/>
+        <g clip-path="url(#zc)">
+          <rect x="480" y="70" width="70" height="320" fill="#20252B"/>
+          <path d="M500 70v320M520 70v320M538 70v320" stroke="#3D4650" stroke-width="2"/>
+          <text transform="translate(531 262) rotate(-90)" font-size="15" fill="#F5F0E3" letter-spacing="2" text-anchor="middle">GRAFITO</text>
+          <!-- pili -->
+          <g fill="none" stroke="#7A2416" stroke-width="2.2" stroke-linecap="round">
+            <path d="M598 222C582 214 568 198 553 190"/>
+            <path d="M595 233C580 238 566 232 553 236"/>
+            <path d="M598 244C586 262 568 272 553 282"/>
+          </g>
+          <path d="M562 186l-11 3 8 8z M563 231l-11 5 11 5z M564 284l-12-1 6-10z" fill="#7A2416"/>
+          <!-- bacteria -->
+          <g transform="translate(657 222) rotate(-10)">
+            <rect x="-62" y="-24" width="124" height="48" rx="24" fill="#CF4F36" stroke="#7A2416" stroke-width="2.5"/>
+            <path d="M-36 -11H30" stroke="#E98A72" stroke-width="5" stroke-linecap="round"/>
+            <g fill="#7A2416"><circle cx="-61" cy="0" r="4.5"/><circle cx="-57" cy="-13" r="4.5"/><circle cx="-57" cy="13" r="4.5"/><circle cx="-47" cy="-22" r="4.5"/><circle cx="-47" cy="22" r="4.5"/></g>
+          </g>
+          <!-- electrones -->
+          <g font-size="11" font-weight="600" text-anchor="middle" fill="#1B1F24">
+            <circle cx="577" cy="207" r="10" fill="#E7B12E" stroke="#1B1F24" stroke-width="1.5"/><text x="577" y="211">e⁻</text>
+            <circle cx="574" cy="236" r="10" fill="#E7B12E" stroke="#1B1F24" stroke-width="1.5"/><text x="574" y="240">e⁻</text>
+            <circle cx="578" cy="265" r="10" fill="#E7B12E" stroke="#1B1F24" stroke-width="1.5"/><text x="578" y="269">e⁻</text>
+          </g>
+          <!-- materia orgánica -->
+          <g fill="#CFC56A" stroke="#8D8433" stroke-width="1.2">
+            <circle cx="716" cy="150" r="6"/><circle cx="733" cy="163" r="6"/><circle cx="712" cy="168" r="6"/><circle cx="728" cy="141" r="5"/>
+          </g>
+          <path d="M716 177L703 196" stroke="#1B1F24" stroke-width="2" marker-end="url(#arr)"/>
+        </g>
+        <circle cx="630" cy="225" r="140" fill="none" stroke="#1B1F24" stroke-width="3"/>
+        <text x="640" y="136" text-anchor="middle" font-size="14" font-style="italic" fill="#1B1F24">Geobacter sulfurreducens</text>
+        <text x="596" y="313" font-size="14" fill="#1B1F24">pili y citocromos</text>
+        <text x="630" y="392" text-anchor="middle" font-size="13" fill="#575D65">Superficie del electrodo, vista ampliada</text>
+
+        <!-- números que enlazan con la lista -->
+        <g font-size="13" font-weight="600" text-anchor="middle" fill="#F5F0E3">
+          <circle cx="750" cy="192" r="12" fill="#1B1F24"/><text x="750" y="196.5">1</text>
+          <circle cx="578" cy="308" r="12" fill="#1B1F24"/><text x="578" y="312.5">2</text>
+          <circle cx="524" cy="150" r="12" fill="#F5F0E3"/><text x="524" y="154.5" fill="#1B1F24">3</text>
+          <circle cx="268" cy="18" r="12" fill="#1B1F24"/><text x="268" y="22.5">4</text>
+        </g>
+      </svg>
+      <figcaption><b>Figura 1.</b> Esquema conceptual de una celda de combustible microbiano con <em>Geobacter sulfurreducens</em>. Elaboración propia a partir de lo explicado en la conferencia.</figcaption>
+    </figure>
+    <div class="side-col">
+      <div>
+        <h3>Cómo funciona la celda</h3>
+        <ol class="how">
+          <li><span class="badge">1</span><span>La bacteria metaboliza la materia orgánica del lactosuero.</span></li>
+          <li><span class="badge">2</span><span>Los electrones que obtiene salen de la célula por pili y citocromos.</span></li>
+          <li><span class="badge">3</span><span>Llegan al electrodo de grafito, sobre el que la bacteria forma una biopelícula.</span></li>
+          <li><span class="badge">4</span><span>Ese paso de electrones genera un flujo eléctrico, que se sigue con el potencial de la celda.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h3>Procedimiento presentado</h3>
+        <ol class="steps">
+          <li><span class="k">Paso 1</span><b>Recolección</b>Lactosuero de queserías artesanales, mezclado según la variación estacional.</li>
+          <li><span class="k">Paso 2</span><b>Preparación</b>Filtrado, esterilizado y con pH ajustado a 6 a 6.5.</li>
+          <li><span class="k">Paso 3</span><b>Cultivo</b>10<sup>4</sup> células por mililitro, en condiciones sin oxígeno.</li>
+          <li><span class="k">Paso 4</span><b>Muestreo</b>Tres tomas durante el cultivo.<span class="days"><span>día 7</span><span>día 14</span><span>día 21</span></span></li>
+          <li><span class="k">Paso 5</span><b>Análisis</b>Microscopía de fuerza atómica (AFM), electrónica de barrido (SEM) y análisis elemental (EDS).</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="block g g-8-4">
+    <div>
+      <h3>Resultados</h3>
+      <div class="tiles">
+        <div class="tile"><div class="v">90–94<small>%</small></div><div class="l">Viabilidad celular</div></div>
+        <div class="tile"><div class="v">1.6–1.8<small>µm</small></div><div class="l">Longitud celular promedio</div></div>
+        <div class="tile"><div class="v t">Microcolonias y multicapas</div><div class="l">Estructura de la biopelícula vista por microscopía</div></div>
+        <div class="tile"><div class="v t">Se estabiliza</div><div class="l">Potencial de circuito abierto contra el tiempo</div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Limitaciones</h3>
+      <div class="limits">
+        <ul>
+          <li>El suero es un medio poco convencional para esta bacteria.</li>
+          <li>El fieltro de grafito no funcionó, por su porosidad.</li>
+          <li>La lactosa podría integrarse en la biopelícula y bajar la eficiencia eléctrica.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 RELACIÓN CON EL CÁLCULO INTEGRAL ================= -->
+<section class="sec calc" id="calculo">
+  <div class="sec-head"><span class="num">03</span><h2>Relación con el cálculo integral</h2></div>
+  <p class="calc-intro">La conferencia describe dos magnitudes que cambian en el tiempo: el potencial de la celda y la población de bacterias. La integral permite pasar de la tasa de cambio a la cantidad total y resumir una curva en un solo valor, que son las operaciones de la Fase 4.</p>
+
+  <div class="calc-grid">
+    <article class="eqcard s4">
+      <span class="tag">A · Potencial</span>
+      <h4>Valor medio de una función</h4>
+      <p>La conferencia mostró una gráfica de potencial de circuito abierto contra tiempo que se estabiliza. Una curva así se resume con su valor medio en un intervalo:</p>
+      <div class="eq hi" data-tex="V_{\text{prom}}=\frac{1}{t_2-t_1}\int_{t_1}^{t_2}V(t)\,dt">V_prom = 1/(t₂−t₁) · ∫ V(t) dt</div>
+      <p>Es la operación del Problema 3, aplicada allí a <span class="m" data-tex="F(x)=e^{x}">F(x) = eˣ</span> <span style="white-space:nowrap">en <span class="m" data-tex="[0,1]">[0, 1]</span>:</span></p>
+      <div class="eq" data-tex="\frac{1}{1-0}\int_{0}^{1}e^{x}\,dx=e-1\approx 1.72">∫₀¹ eˣ dx = e − 1 ≈ 1.72</div>
+    </article>
+
+    <article class="eqcard s4">
+      <span class="tag">B · Población</span>
+      <h4>Crecimiento exponencial</h4>
+      <p>Según la conferencia, la bacteria crece de forma exponencial en el suero. Si la población crece a un ritmo proporcional a su tamaño, la función se obtiene integrando:</p>
+      <div class="eq" data-tex="\frac{dN}{dt}=kN\;\;\Rightarrow\;\;\int\frac{dN}{N}=\int k\,dt">dN/dt = kN ⇒ ∫ dN/N = ∫ k dt</div>
+      <div class="eq hi" data-tex="N(t)=N_0\,e^{kt}">N(t) = N₀·e^(kt)</div>
+      <p class="tail"><span class="m" data-tex="N_0">N₀</span> es la población inicial y <span class="m" data-tex="k">k</span> la tasa de crecimiento. Es la misma familia de la función <span class="m" data-tex="e^{x}">eˣ</span> del Problema 3.</p>
+    </article>
+
+    <article class="eqcard s4">
+      <span class="tag">C · Electricidad</span>
+      <h4>Carga y energía</h4>
+      <p>En circuito abierto no circula corriente. Cuando una celda alimenta una carga, la corriente <span class="m" data-tex="I(t)">I(t)</span> y la potencia <span class="m" data-tex="P(t)=V(t)\,I(t)">P(t) = V(t)·I(t)</span> varían en el tiempo, y lo que la celda entrega se calcula acumulando:</p>
+      <div class="eq hi" data-tex="Q=\int_{t_1}^{t_2}I(t)\,dt">Q = ∫ I(t) dt</div>
+      <div class="eq hi" data-tex="E=\int_{t_1}^{t_2}P(t)\,dt=\int_{t_1}^{t_2}V(t)\,I(t)\,dt">E = ∫ P(t) dt = ∫ V(t)·I(t) dt</div>
+      <p class="tail"><span class="m" data-tex="Q">Q</span> es la carga transferida, en culombios, y <span class="m" data-tex="E">E</span> la energía entregada, en julios.</p>
+    </article>
+
+    <figure class="fig s4">
+      <svg viewBox="0 0 600 320" role="img" aria-label="Curva ilustrativa de un potencial que crece y se estabiliza, con su valor medio marcado como un rectángulo de igual área">
+        <defs>
+          <marker id="ax" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1B1F24"/></marker>
+        </defs>
+        <!-- área bajo la curva -->
+        <path d="M60 280L79.2 240.2L98.3 209.2L117.5 185L136.7 166.2L155.8 151.6L175 140.2L213.3 124.4L251.7 114.8L290 109L328.3 105.4L366.7 103.3L443.3 101.2L520 100.4V280Z" fill="#F1CDBF"/>
+        <!-- rectángulo del valor medio -->
+        <rect x="60" y="129.9" width="460" height="150.1" fill="none" stroke="#1C6B70" stroke-width="2" stroke-dasharray="7 5"/>
+        <!-- ejes -->
+        <path d="M60 280V34" stroke="#1B1F24" stroke-width="2" marker-end="url(#ax)" fill="none"/>
+        <path d="M60 280H556" stroke="#1B1F24" stroke-width="2" marker-end="url(#ax)" fill="none"/>
+        <!-- curva -->
+        <path d="M60 280L79.2 240.2L98.3 209.2L117.5 185L136.7 166.2L155.8 151.6L175 140.2L213.3 124.4L251.7 114.8L290 109L328.3 105.4L366.7 103.3L443.3 101.2L520 100.4" fill="none" stroke="#CF4F36" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- punto c -->
+        <path d="M197.5 129.9V280" stroke="#1B1F24" stroke-width="1.3" stroke-dasharray="3 4"/>
+        <circle cx="197.5" cy="129.9" r="6" fill="#1C6B70" stroke="#FBF8EF" stroke-width="2"/>
+        <path d="M520 100.4V280" stroke="#1B1F24" stroke-width="1.3" stroke-dasharray="3 4"/>
+        <!-- rótulos -->
+        <g font-size="15" fill="#1B1F24">
+          <text x="70" y="40">Potencial</text>
+          <text x="592" y="303" text-anchor="end">Tiempo</text>
+          <text x="60" y="303" text-anchor="middle" font-style="italic">t<tspan font-size="11" dy="4">1</tspan></text>
+          <text x="520" y="303" text-anchor="middle" font-style="italic">t<tspan font-size="11" dy="4">2</tspan></text>
+          <text x="197.5" y="303" text-anchor="middle" font-style="italic">c</text>
+          <text x="400" y="88" text-anchor="middle"><tspan font-style="italic">V</tspan>(<tspan font-style="italic">t</tspan>) se estabiliza</text>
+          <text x="528" y="135" fill="#1C6B70" font-weight="600"><tspan font-style="italic">V</tspan><tspan font-size="11" dy="4">prom</tspan></text>
+        </g>
+      </svg>
+      <figcaption><b>Figura 2.</b> Curva ilustrativa, sin datos de la conferencia. El área bajo <em>V</em>(<em>t</em>) entre <em>t</em>₁ y <em>t</em>₂ es igual a la del rectángulo punteado de altura <em>V</em><sub>prom</sub>, y existe un instante <em>c</em> en el que la curva toma ese valor. Elaboración propia.</figcaption>
+    </figure>
+
+    <div class="fase s8">
+      <h3 style="margin:0">Las mismas herramientas en la Fase 4 · letra C · cuenca del río Bogotá</h3>
+      <div class="probs">
+        <div class="prob"><span class="tag">Problema 1</span><h4>Área entre curvas</h4>
+          <p class="d">Entre <span class="m" data-tex="f(x)=x^{2}+1">f(x) = x² + 1</span> y <span class="m" data-tex="g(x)=-x^{2}+5">g(x) = −x² + 5</span>, en <span class="m" data-tex="[-1,1]">[−1, 1]</span>.</p>
+          <div class="e" data-tex="\int_{-1}^{1}\big[(-x^{2}+5)-(x^{2}+1)\big]\,dx">∫[(−x²+5) − (x²+1)] dx</div>
+          <div class="r" data-tex="=\tfrac{20}{3}\approx 6.67\ \text{m}^2">= 20/3 ≈ 6.67 m²</div></div>
+        <div class="prob"><span class="tag">Problema 2</span><h4>Volumen por cascarones</h4>
+          <p class="d">La región entre <span class="m" data-tex="y=x^{2}">y = x²</span>, <span class="m" data-tex="y=0">y = 0</span>, <span class="m" data-tex="x=0">x = 0</span> y <span class="m" data-tex="x=2">x = 2</span> gira alrededor del eje <span class="m" data-tex="y">y</span>.</p>
+          <div class="e" data-tex="2\pi\int_{0}^{2}x\cdot x^{2}\,dx">2π ∫ x·x² dx</div>
+          <div class="r" data-tex="=8\pi\approx 25.13\ \text{m}^3">= 8π ≈ 25.13 m³</div></div>
+        <div class="prob"><span class="tag">Problema 3</span><h4>Valor medio</h4>
+          <p class="d">De <span class="m" data-tex="F(x)=e^{x}">F(x) = eˣ</span> en <span class="m" data-tex="[0,1]">[0, 1]</span>, con el teorema del valor medio para integrales.</p>
+          <div class="e" data-tex="\frac{1}{1-0}\int_{0}^{1}e^{x}\,dx">∫₀¹ eˣ dx</div>
+          <div class="r" data-tex="=e-1\approx 1.72\ \text{t}">= e − 1 ≈ 1.72 t</div></div>
+      </div>
+      <p class="agua"><b>Relación con el agua.</b> La Fase 4 aplica la integral a la infraestructura hídrica de una cuenca. La conferencia trata el mismo problema global desde el origen del contaminante: darle uso al lactosuero evita su vertido sin tratamiento, y esa es una forma de cuidar el agua.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 a 07 ================= -->
+<div class="bottom">
+  <section class="sec reflex" id="reflexion">
+    <div class="sec-head"><span class="num">04</span><h2>Reflexión personal</h2></div>
+    <p>Estudio Ingeniería Electrónica y en mi carrera aparecen todo el tiempo celdas, corriente, potencia y señales que cambian en el tiempo. Por eso me llamó la atención que una bacteria pueda hacer el papel de una fuente.</p>
+    <p>En esta fase apliqué la integral a problemas de infraestructura hídrica de una comunidad. La conferencia me hizo pensar que las integrales también sirven para analizar cómo cambian en el tiempo cosas como el potencial de una celda o la energía de un sistema.</p>
+    <p>En mi contexto profesional lo aplicaría al trabajar con mediciones de voltaje y corriente, por ejemplo para calcular la energía que entrega una fuente o que consume un circuito. En mi comunidad, me deja la tarea de fijarme en qué residuos se vierten al agua sin tratamiento y si se les puede dar un uso antes de desecharlos.</p>
+  </section>
+
+  <section class="sec" id="conclusiones">
+    <div class="sec-head"><span class="num">05</span><h2>Conclusiones</h2></div>
+    <ol class="concl">
+      <li><span><em class="sp">Geobacter sulfurreducens</em> crece de forma exponencial en lactosuero, con una viabilidad celular de 90 a 94 %, aunque el suero es un medio poco convencional para ella.</span></li>
+      <li><span>La arquitectura del electrodo es determinante: el fieltro de grafito no funcionó por su porosidad.</span></li>
+      <li><span>La microscopía confirma la formación de la biopelícula, con microcolonias y multicapas.</span></li>
+      <li><span>El crecimiento de la bacteria y el potencial de la celda son funciones del tiempo. La integral permite resumirlas con un valor medio o acumularlas como carga y energía.</span></li>
+      <li><span>Aprovechar un residuo contaminante como el lactosuero aporta al cuidado del agua, el problema que orienta la Fase 4.</span></li>
+    </ol>
+  </section>
+
+  <div class="side">
+    <section class="sec refs" id="referencias">
+    <div class="sec-head"><span class="num">06</span><h2>Referencias</h2></div>
+    <p>Villa Cruz, V. (2026, 5 de noviembre). <em>Valorización de lactosuero regional</em> [Conferencia]. En V Jornada Internacional de Ingeniería Aplicada, UNAD. <a href="https://www.youtube.com/watch?v=tVbwd6a1TGc">https://www.youtube.com/watch?v=tVbwd6a1TGc</a></p>
+    <p>Universidad Nacional Abierta y a Distancia [UNAD]. (2026, 5 de noviembre). <em>Conferencias Internacionales V Jornada de Ingeniería Aplicada ECBTI. Día 2</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=tVbwd6a1TGc">https://www.youtube.com/watch?v=tVbwd6a1TGc</a></p>
+  </section>
+    <section class="credits" id="creditos">
+      <div class="sec-head"><span class="num">07</span><h2>Créditos</h2></div>
+      <p class="name">Ing. Leonardo Sánchez Montoya</p>
+      <ul>
+        <li>Programa: Ingeniería Electrónica</li>
+        <li>Curso: Cálculo Integral, código 100411</li>
+        <li>Universidad Nacional Abierta y a Distancia (UNAD)</li>
+        <li>Noviembre de 2026</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<div class="foot"><span>Fase 4 · Cálculo con las aplicaciones de la integral</span><a class="pdf" href="Poster-Calculo-Integral-Fase-4.pdf">Descargar en PDF</a><span>Esquemas y ecuaciones de elaboración propia</span></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script>
+(function(){
+  if(!window.katex) return;
+  document.querySelectorAll('[data-tex]').forEach(function(el){
+    var display = el.classList.contains('eq');
+    try{ katex.render(el.getAttribute('data-tex'), el, {displayMode:display, throwOnError:false}); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
