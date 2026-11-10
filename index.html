@@ -158,7 +158,7 @@ figcaption b{color:var(--ink);font-weight:600}
   .hero-main{margin-top:1.4rem}
   .hero-row{grid-template-columns:1fr}
   .hero-art{display:none}
-  h1{font-size:2.7rem;white-space:normal;line-height:1.02}
+  h1{font-size:2.7rem;white-space:normal;line-height:1.02;font-variation-settings:"opsz" 40}
   .sub{font-size:1.2rem}
   .speaker{font-size:1rem;flex-direction:column}
   .speaker span+span::before{display:none}
@@ -179,6 +179,17 @@ figcaption b{color:var(--ink);font-weight:600}
 }
 
 .foot a{color:var(--amber)}
+
+/* Tamaño óptico fijo: el póster se escala entero, la forma de las letras no debe cambiar */
+h1{font-variation-settings:"opsz" 118.4}
+.sub{font-variation-settings:"opsz" 30.4}
+h2{font-variation-settings:"opsz" 37.6}
+.tile .v{font-variation-settings:"opsz" 46.4}
+.tile .v.t{font-variation-settings:"opsz" 28}
+.eqcard h4{font-variation-settings:"opsz" 25.6}
+.prob h4{font-variation-settings:"opsz" 22.4}
+.credits .name{font-variation-settings:"opsz" 27.2}
+.reflex p:first-of-type{font-variation-settings:"opsz" 22.7}
 
 /* ---------- PDF ---------- */
 @page{size:1840px 3572px;margin:0}
