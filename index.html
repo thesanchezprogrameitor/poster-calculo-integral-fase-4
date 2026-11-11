@@ -49,7 +49,7 @@ em.sp{font-style:italic}
 .hero-top{display:flex;justify-content:space-between;gap:2rem;font-family:var(--mono);font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:#B9B3A2;border-bottom:1px solid var(--graphite-3);padding-bottom:1rem}
 .hero-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:3.5rem 0 2rem}
 .kicker{font-family:var(--mono);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin:0 0 1.2rem}
-h1{font-family:var(--serif);font-weight:600;font-size:9.6rem;line-height:.93;letter-spacing:-.035em;margin:0 0 2.2rem;font-variation-settings:"opsz" 144}
+h1{font-family:var(--serif);font-weight:600;font-size:7.5rem;line-height:.97;letter-spacing:-.035em;margin:0 0 2.2rem;font-variation-settings:"opsz" 144}
 .h1-l{display:block;overflow:hidden;padding-bottom:.13em;margin-bottom:-.13em}
 .h1-in{display:block}
 .hero-row{display:grid;grid-template-columns:1fr 27rem;gap:4rem;align-items:end}
@@ -188,8 +188,22 @@ figcaption b{color:var(--ink);font-weight:600}
 .foot .wrap{display:flex;justify-content:space-between;gap:1rem}
 .foot a{color:var(--amber)}
 
+/* ---------- Frase principal y detalle (textos largos) ---------- */
+.after{font-size:1.55rem;line-height:1.45;max-width:66rem;margin:2.4rem 0 0}
+.calc .after{color:#D5CFBD}
+.cell.pinned .steps{height:28rem}
+.cell.pinned .step .n{font-size:8.4rem}
+.cell.pinned .step p{font-size:2.45rem;line-height:1.15;font-variation-settings:"opsz" 39}
+.cell.pinned .step .d{display:block;font-family:var(--sans);font-size:1.4rem;line-height:1.42;letter-spacing:0;color:var(--muted);margin-top:1.1rem}
+.proc.pinned .card{min-height:32rem}
+.proc.pinned .card .t{font-size:1.28rem}
+.stat .v.t{font-size:3.25rem;line-height:1.05;font-variation-settings:"opsz" 52}
+.q{font-size:3.9rem;font-variation-settings:"opsz" 62}
+.concl .d{display:block;font-family:var(--sans);font-size:1.32rem;line-height:1.45;letter-spacing:0;color:var(--muted);margin-top:.8rem}
+.eqs .eq-note{text-align:center;margin-top:0}
+
 /* ---------- Pantalla con animaciones ---------- */
-@media screen and (min-width:761px){
+@media screen and (min-width:1001px){
   html.js .hero{min-height:100vh}
   html.js .intro{min-height:100vh;display:flex;align-items:center}
   html.js .reflex{min-height:92vh;display:flex;align-items:center}
@@ -220,15 +234,15 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:hidden}
 
 /* ---------- Celular ---------- */
-@media screen and (max-width:760px){
+@media screen and (max-width:1000px){
   html{font-size:16px}
   :root{--pad:4rem}
   body{font-size:1.05rem}
-  .wrap{width:auto;margin:0 1.2rem}
+  .wrap{width:auto;max-width:46rem;margin:0 auto;padding:0 1.2rem}
   .hero{padding:1.1rem 0 2.4rem}
   .hero-top{flex-direction:column;gap:.3rem;font-size:.66rem}
   .hero-main{padding:1.8rem 0 0}
-  h1{font-size:3.1rem;line-height:1;font-variation-settings:"opsz" 50;margin-bottom:1.3rem}
+  h1{font-size:2.4rem;line-height:1.04;font-variation-settings:"opsz" 40;margin-bottom:1.3rem}
   .hero-row{grid-template-columns:1fr;gap:1.5rem}
   .hero-art{max-width:15rem}
   .sub{font-size:1.25rem}
@@ -250,7 +264,9 @@ html.lenis,html.lenis body{height:auto}
   .stat{padding:1.3rem 0 1.8rem}
   .stat .v{font-size:4rem}
   .stat .v small{font-size:1.6rem}
-  .stat .v.t{font-size:2.1rem}
+  .stat .v.t{font-size:1.75rem}
+  .after{font-size:1.1rem;margin-top:1.4rem}
+  .concl .d{font-size:1.02rem;margin-top:.5rem}
   .stat .l{font-size:1.05rem;margin-top:.7rem}
   .limits{gap:1.2rem}
   .limits li{font-size:1.05rem}
@@ -278,7 +294,7 @@ html.static{font-size:16px;--pad:3.8rem;background:#171B20}
 html.static body{width:100rem}
 html.static .hero{padding-bottom:3rem}
 html.static .hero-main{padding:2.4rem 0 0}
-html.static h1{font-size:8.6rem;margin-bottom:1.6rem}
+html.static h1{font-size:7rem;margin-bottom:1.6rem}
 html.static .label{margin-bottom:2rem}
 html.static .big{font-size:2.75rem;line-height:1.17}
 html.static .ctx{margin-top:2.8rem}
@@ -287,7 +303,9 @@ html.static .stats{grid-template-columns:repeat(4,1fr);column-gap:2rem}
 html.static .stat{padding:1.3rem 0 2rem}
 html.static .stat .v{font-size:3.9rem;letter-spacing:-.03em}
 html.static .stat .v small{font-size:1.6rem;margin-left:.3rem}
-html.static .stat .v.t{font-size:2.15rem}
+html.static .stat .v.t{font-size:1.6rem}
+html.static .after{font-size:1.25rem;margin-top:1.5rem}
+html.static .concl .d{font-size:1.05rem;margin-top:.4rem}
 html.static .stat .l{font-size:1.08rem;margin-top:.8rem}
 html.static .limits li{font-size:1.15rem}
 html.static .chaps{margin-top:2.8rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem;border-top:1px solid var(--graphite-3);padding-top:2.8rem}
@@ -310,7 +328,7 @@ html.static .concl .n{font-size:2.7rem}
 html.static .concl p{font-size:1.32rem}
 html.static .end{padding:3.6rem 0 3.2rem}
 html.static .progress,html.static .foot .pdf{display:none}
-@page{size:1600px 5400px;margin:0}
+@page{size:1600px 5812px;margin:0}
 @media print{
   .progress,.cue,.foot .pdf{display:none !important}
   [data-r],.w,.step,.card{opacity:1 !important;visibility:visible !important}
@@ -329,10 +347,10 @@ html.static .progress,html.static .foot .pdf{display:none}
     </div>
     <div class="hero-main">
       <p class="kicker fade" style="--d:.1s">Conferencia magistral internacional · Cadena de Formación de Alimentos</p>
-      <h1><span class="h1-l"><span class="h1-in">Valorización de</span></span><span class="h1-l"><span class="h1-in">lactosuero regional</span></span></h1>
+      <h1><span class="h1-l"><span class="h1-in">Aprovechamiento del lactosuero</span></span><span class="h1-l"><span class="h1-in">para generar electricidad</span></span></h1>
       <div class="hero-row">
         <div>
-          <p class="sub fade" style="--d:1s">Electricidad a partir de un residuo de quesería, con la bacteria <i>Geobacter sulfurreducens</i></p>
+          <p class="sub fade" style="--d:1s">Cómo se puede generar electricidad a partir del lactosuero mediante la bacteria <i>Geobacter sulfurreducens</i>.</p>
           <p class="speaker fade" style="--d:1.3s"><span><b>Dra. Virginia Villa Cruz</b></span><span>Universidad de Guadalajara, México</span><span>5 de noviembre de 2026</span></p>
           <a class="watch fade" style="--d:1.6s" href="https://www.youtube.com/watch?v=tVbwd6a1TGc">Ver la conferencia en YouTube</a>
         </div>
@@ -372,11 +390,12 @@ html.static .progress,html.static .foot .pdf{display:none}
 <section class="sec intro" id="introduccion">
   <div class="wrap">
     <div class="label" data-r><span class="num">01</span><h2>Introducción</h2></div>
-    <p class="big fill">En Lagos de Moreno, México, las queserías artesanales vierten el lactosuero sin tratamiento, un residuo que contamina el ambiente y se desperdicia, y la Dra. Virginia Villa Cruz propone aprovecharlo en celdas de combustible microbiano, donde una bacteria lo convierte en un flujo eléctrico.</p>
+    <p class="big fill">En Lagos de Moreno, México, algunas queserías artesanales desechan el lactosuero que queda después de elaborar el queso.</p>
+    <p class="after" data-r>Cuando no recibe un tratamiento adecuado, este residuo puede generar problemas ambientales. Durante la conferencia, la Dra. Virginia Villa Cruz presentó una alternativa para aprovecharlo: utilizarlo en celdas de combustible microbiano que permiten generar electricidad mediante la actividad de bacterias.</p>
     <dl class="ctx">
-      <div data-r><dt>Evento</dt><dd>V Jornada Internacional de Ingeniería Aplicada, UNAD · ECBTI, ciclo de conferencias magistrales internacionales.</dd></div>
-      <div data-r><dt>Título completo</dt><dd>«Valorización de lactosuero regional mediante <em class="sp">Geobacter sulfurreducens</em>: dinámica de crecimiento y formación de biopelícula sobre electrodos de grafito».</dd></div>
-      <div data-r><dt>Transmisión</dt><dd>YouTube, canal de la UNAD, 5 de noviembre de 2026. En la misma sesión, el Dr. Arcadio Penagos Macías (Universidad Politécnica de Chiapas) presentó «Transición energética y tecnología sostenible».</dd></div>
+      <div data-r><dt>Evento</dt><dd>V Jornada Internacional de Ingeniería Aplicada — UNAD, ECBTI.</dd></div>
+      <div data-r><dt>Título completo</dt><dd>«Valorización de lactosuero regional mediante <em class="sp">Geobacter sulfurreducens</em>: dinámica de crecimiento y formación de biopelícula sobre electrodos de grafito.»</dd></div>
+      <div data-r><dt>Transmisión</dt><dd>La conferencia se transmitió por el canal de YouTube de la UNAD el 5 de noviembre de 2026. En esa misma jornada participó el Dr. Arcadio Penagos Macías, con una presentación sobre transición energética y tecnología sostenible.</dd></div>
     </dl>
   </div>
 </section>
@@ -491,12 +510,12 @@ html.static .progress,html.static .foot .pdf{display:none}
       <figcaption><b>Figura 1.</b> Esquema conceptual de una celda de combustible microbiano con <em>Geobacter sulfurreducens</em>. Elaboración propia a partir de lo explicado en la conferencia.</figcaption>
     </figure>
       <div class="stage">
-        <p class="kick">Cómo funciona la celda</p>
+        <p class="kick">¿Cómo se genera electricidad?</p>
         <ol class="steps">
-          <li class="step"><span class="n">1</span><p>La bacteria metaboliza la materia orgánica del lactosuero.</p></li>
-          <li class="step"><span class="n">2</span><p>Los electrones salen de la célula por pili y citocromos.</p></li>
-          <li class="step"><span class="n">3</span><p>Llegan al electrodo de grafito, donde se forma la biopelícula.</p></li>
-          <li class="step"><span class="n">4</span><p>Ese paso de electrones es un flujo eléctrico, que se sigue con el potencial de la celda.</p></li>
+          <li class="step"><span class="n">1</span><p>La bacteria utiliza la materia orgánica del lactosuero para obtener energía.</p></li>
+          <li class="step"><span class="n">2</span><p>La bacteria transfiere electrones al exterior <span class="d">mediante estructuras llamadas pili y proteínas conocidas como citocromos.</span></p></li>
+          <li class="step"><span class="n">3</span><p>Los electrones llegan al electrodo de grafito, <span class="d">donde las bacterias se adhieren y forman una biopelícula.</span></p></li>
+          <li class="step"><span class="n">4</span><p>La transferencia de electrones permite generar corriente eléctrica. <span class="d">El comportamiento de la celda se puede estudiar mediante la medición de su potencial eléctrico.</span></p></li>
         </ol>
         <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <p class="hint" aria-hidden="true">Sigue bajando ↓</p>
@@ -507,18 +526,18 @@ html.static .progress,html.static .foot .pdf{display:none}
 
 <section class="sec cont proc">
   <div class="wrap">
-    <p class="kick" data-r>Procedimiento presentado</p>
+    <p class="kick" data-r>¿Cómo se realizó el estudio?</p>
     <ol class="track">
       <li class="card"><span class="big-n" aria-hidden="true">01</span><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6C24 6 11 21 11 30a13 13 0 0 0 26 0C37 21 24 6 24 6Z"/><path d="M18 31a6 6 0 0 0 6 6"/></svg></span>
-        <span class="k">Paso 01</span><b>Recolección</b><span class="t">Lactosuero de queserías artesanales, mezclado según la variación estacional.</span></li>
+        <span class="k">Paso 01</span><b>Recolección</b><span class="t">Se recolectó lactosuero de queserías artesanales, teniendo en cuenta las variaciones según la temporada.</span></li>
       <li class="card"><span class="big-n" aria-hidden="true">02</span><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 9H41L28 25V40L20 36V25Z"/></svg></span>
-        <span class="k">Paso 02</span><b>Preparación</b><span class="t">Filtrado, esterilizado y con pH ajustado entre 6 y 6.5.</span></li>
+        <span class="k">Paso 02</span><b>Preparación</b><span class="t">El lactosuero se filtró, se esterilizó y se ajustó a un pH entre 6 y 6.5.</span></li>
       <li class="card"><span class="big-n" aria-hidden="true">03</span><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 6H29M21 6V19L9 38A3 3 0 0 0 12 42H36A3 3 0 0 0 39 38L27 19V6"/><path d="M15 31H33"/></svg></span>
-        <span class="k">Paso 03</span><b>Cultivo</b><span class="t">10<sup>4</sup> células por mililitro, en condiciones sin oxígeno.</span></li>
+        <span class="k">Paso 03</span><b>Cultivo</b><span class="t">Se preparó el cultivo con una concentración de 10<sup>4</sup> células por mililitro, en ausencia de oxígeno.</span></li>
       <li class="card"><span class="big-n" aria-hidden="true">04</span><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="31" rx="4"/><path d="M7 19H41M16 5V13M32 5V13M15 27H17M23 27H25M31 27H33M15 34H17"/></svg></span>
-        <span class="k">Paso 04</span><b>Muestreo</b><span class="chips"><span>día 7</span><span>día 14</span><span>día 21</span></span><span class="t">Tres tomas durante el cultivo.</span></li>
+        <span class="k">Paso 04</span><b>Muestreo</b><span class="chips"><span>día 7</span><span>día 14</span><span>día 21</span></span><span class="t">Se realizaron tres muestreos durante el cultivo: en los días 7, 14 y 21.</span></li>
       <li class="card"><span class="big-n" aria-hidden="true">05</span><span class="ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="12"/><path d="M30 30L42 42"/></svg></span>
-        <span class="k">Paso 05</span><b>Análisis</b><span class="chips"><span>AFM</span><span>SEM</span><span>EDS</span></span><span class="t">Microscopía de fuerza atómica, electrónica de barrido y análisis elemental.</span></li>
+        <span class="k">Paso 05</span><b>Análisis</b><span class="chips"><span>AFM</span><span>SEM</span><span>EDS</span></span><span class="t">Se utilizaron tres técnicas de análisis: microscopía de fuerza atómica (AFM), microscopía electrónica de barrido (SEM) y espectroscopía de rayos X por dispersión de energía (EDS), que permite el análisis elemental.</span></li>
     </ol>
     <div class="rail" aria-hidden="true"><i></i></div>
   </div>
@@ -528,16 +547,16 @@ html.static .progress,html.static .foot .pdf{display:none}
   <div class="wrap">
     <p class="kick" data-r>Resultados</p>
     <div class="stats">
-      <div class="stat" data-r><div class="v"><span class="cnt" data-to="90">90</span>–<span class="cnt" data-to="94">94</span><small>%</small></div><div class="l">Viabilidad celular</div></div>
-      <div class="stat" data-r><div class="v"><span class="cnt" data-to="1.6" data-dec="1">1.6</span>–<span class="cnt" data-to="1.8" data-dec="1">1.8</span><small>µm</small></div><div class="l">Longitud celular promedio</div></div>
-      <div class="stat" data-r><div class="v t">Microcolonias y multicapas</div><div class="l">Biopelícula vista por microscopía</div></div>
-      <div class="stat" data-r><div class="v t">Se estabiliza</div><div class="l">Potencial de circuito abierto contra el tiempo</div></div>
+      <div class="stat" data-r><div class="v"><span class="cnt" data-to="90">90</span>–<span class="cnt" data-to="94">94</span><small>%</small></div><div class="l">Viabilidad de las células</div></div>
+      <div class="stat" data-r><div class="v"><span class="cnt" data-to="1.6" data-dec="1">1.6</span>–<span class="cnt" data-to="1.8" data-dec="1">1.8</span><small>µm</small></div><div class="l">Longitud promedio de las células</div></div>
+      <div class="stat" data-r><div class="v t">Formación de microcolonias y varias capas de células</div><div class="l">Observación de la biopelícula mediante microscopía</div></div>
+      <div class="stat" data-r><div class="v t">El potencial tiende a estabilizarse</div><div class="l">Variación del potencial de circuito abierto con el tiempo</div></div>
     </div>
     <p class="kick second" data-r>Limitaciones</p>
     <ul class="limits">
-      <li data-r>El suero es un medio poco convencional para la bacteria.</li>
-      <li data-r>El fieltro de grafito no funcionó, por su porosidad.</li>
-      <li data-r>La lactosa podría integrarse en la biopelícula y bajar la eficiencia eléctrica.</li>
+      <li data-r>El lactosuero no es un medio habitual para el crecimiento de esta bacteria.</li>
+      <li data-r>El fieltro de grafito no presentó los resultados esperados; su porosidad pudo influir en el comportamiento de la biopelícula.</li>
+      <li data-r>La presencia de lactosa en la biopelícula podría afectar la eficiencia de la celda.</li>
     </ul>
   </div>
 </section>
@@ -546,7 +565,8 @@ html.static .progress,html.static .foot .pdf{display:none}
 <section class="sec calc" id="calculo">
   <div class="wrap">
     <div class="label" data-r><span class="num">03</span><h2>Relación con el cálculo integral</h2></div>
-    <p class="big fill">Lo que la conferencia mide cambia en el tiempo, y la integral resume esas curvas en un solo valor o las acumula en un total.</p>
+    <p class="big fill">Durante la conferencia se explicó cómo cambia el comportamiento de la celda con el paso del tiempo.</p>
+    <p class="after" data-r>El cálculo integral permite estudiar estos cambios y calcular cantidades acumuladas, como la carga eléctrica y la energía producida.</p>
 
     <div class="chaps">
       <article class="chap">
@@ -578,9 +598,9 @@ html.static .progress,html.static .foot .pdf{display:none}
           <figcaption><b>Figura 2.</b> Curva ilustrativa, sin datos de la conferencia. El área bajo <em>V</em>(<em>t</em>) es igual a la del rectángulo punteado de altura <em>V</em><sub>prom</sub>, y en el instante <em>c</em> la curva toma ese valor. Elaboración propia.</figcaption>
         </figure>
         <div class="chap-t" data-r>
-          <span class="tag">A · Potencial</span>
+          <span class="tag">A · Potencial eléctrico</span>
           <h3>Valor medio</h3>
-          <p>La gráfica de potencial contra tiempo que mostró la conferencia se resume con su valor medio, la misma operación del Problema 3.</p>
+          <p>El potencial de la celda cambia con el tiempo. Mediante una integral se puede calcular su valor promedio durante un intervalo determinado, aplicando un procedimiento similar al del Problema 3.</p>
           <div class="eq hi" data-tex="V_{\text{prom}}=\frac{1}{t_2-t_1}\int_{t_1}^{t_2}V(t)\,dt">V_prom = 1/(t₂−t₁) · ∫ V(t) dt</div>
           <div class="eq-note">Problema 3:<span class="m" data-tex="\tfrac{1}{1-0}\int_{0}^{1}e^{x}\,dx=e-1\approx 1.72">∫₀¹ eˣ dx = e − 1 ≈ 1.72</span></div>
         </div>
@@ -590,11 +610,12 @@ html.static .progress,html.static .foot .pdf{display:none}
         <div class="chap-t" data-r>
           <span class="tag">B · Electricidad</span>
           <h3>Carga y energía</h3>
-          <p>Cuando una celda alimenta una carga, la integral acumula la corriente en carga (culombios) y la potencia en energía (julios).</p>
+          <p>Cuando una celda genera electricidad y alimenta un dispositivo, se pueden utilizar integrales para calcular la carga eléctrica suministrada y la energía entregada durante un intervalo de tiempo.</p>
         </div>
         <div class="eqs">
           <div class="eq hi slide" data-tex="Q=\int_{t_1}^{t_2}I(t)\,dt">Q = ∫ I(t) dt</div>
           <div class="eq hi slide" data-tex="E=\int_{t_1}^{t_2}P(t)\,dt=\int_{t_1}^{t_2}V(t)\,I(t)\,dt">E = ∫ P(t) dt = ∫ V(t)·I(t) dt</div>
+          <div class="eq-note"><span class="m" data-tex="Q">Q</span> se mide en culombios (C) y <span class="m" data-tex="E">E</span> en julios (J).</div>
         </div>
       </article>
 
@@ -617,20 +638,20 @@ html.static .progress,html.static .foot .pdf{display:none}
         <div class="chap-t" data-r>
           <span class="tag">C · Población</span>
           <h3>Crecimiento exponencial</h3>
-          <p>La bacteria crece de forma exponencial en el suero, la misma familia de la función <span class="m" data-tex="e^{x}">eˣ</span> del Problema 3.</p>
+          <p>El crecimiento de una población de bacterias puede representarse mediante una función exponencial. Este modelo matemático permite describir cómo cambia la cantidad de bacterias con el tiempo, y pertenece a la misma familia de la función <span class="m" data-tex="e^{x}">eˣ</span> del Problema 3.</p>
           <div class="eq hi" data-tex="N(t)=N_0\,e^{kt}">N(t) = N₀·e^(kt)</div>
         </div>
       </article>
     </div>
 
     <div class="fase">
-      <p class="kick" data-r>Problemas de la Fase 4 · letra C · cuenca del río Bogotá</p>
+      <p class="kick" data-r>Aplicaciones del cálculo integral en la Fase 4 · letra C · cuenca del río Bogotá</p>
       <div class="fase-grid">
         <div class="prob" data-r><span class="tag">Problema 1</span><h4>Área entre curvas</h4><div class="r" data-tex="\tfrac{20}{3}\approx 6.67\ \text{m}^2">20/3 ≈ 6.67 m²</div></div>
         <div class="prob" data-r><span class="tag">Problema 2</span><h4>Volumen por cascarones</h4><div class="r" data-tex="8\pi\approx 25.13\ \text{m}^3">8π ≈ 25.13 m³</div></div>
         <div class="prob" data-r><span class="tag">Problema 3</span><h4>Valor medio</h4><div class="r" data-tex="e-1\approx 1.72\ \text{t}">e − 1 ≈ 1.72 t</div></div>
       </div>
-      <p class="agua" data-r><b>Relación con el agua.</b> Darle uso al lactosuero evita su vertido sin tratamiento, una forma de cuidar el agua, que es el problema global de la Fase 4.</p>
+      <p class="agua" data-r><b>Relación con el agua.</b> Aprovechar el lactosuero puede reducir la cantidad de este residuo que se vierte sin tratamiento. Esta propuesta se relaciona con el propósito de la Fase 4: buscar alternativas frente a los problemas que afectan el agua.</p>
     </div>
   </div>
 </section>
@@ -639,8 +660,8 @@ html.static .progress,html.static .foot .pdf{display:none}
 <section class="sec reflex" id="reflexion">
   <div class="wrap">
     <div class="label" data-r><span class="num">04</span><h2>Reflexión personal</h2></div>
-    <p class="big q fill">Estudio Ingeniería Electrónica, y me llamó la atención que una bacteria pueda hacer el papel de una fuente.</p>
-    <p class="body" data-r>En esta fase apliqué la integral a problemas de agua de una comunidad, y la conferencia me mostró que también sirve para analizar el potencial o la energía de una celda, que es lo que voy a medir en mi carrera. En mi comunidad, me deja la tarea de fijarme en qué residuos se vierten al agua sin tratamiento y si se les puede dar un uso.</p>
+    <p class="big q fill">Como estudiante de Ingeniería Electrónica, me llamó la atención conocer cómo una bacteria puede participar en la generación de electricidad.</p>
+    <p class="body" data-r>Durante esta fase trabajé con aplicaciones del cálculo integral relacionadas con el agua. La conferencia me permitió conocer otra aplicación de esta herramienta: estudiar los cambios en el potencial de una celda y calcular la energía que puede producir. También me hizo pensar en los residuos que se generan en mi entorno y en cómo algunos podrían aprovecharse en lugar de desecharse sin tratamiento.</p>
   </div>
 </section>
 
@@ -649,9 +670,9 @@ html.static .progress,html.static .foot .pdf{display:none}
   <div class="wrap">
     <div class="label" data-r><span class="num">05</span><h2>Conclusiones</h2></div>
     <ol class="concl">
-      <li data-r><span class="n">01</span><p><em class="sp">Geobacter sulfurreducens</em> crece de forma exponencial en lactosuero y forma biopelícula sobre el grafito.</p></li>
-      <li data-r><span class="n">02</span><p>La arquitectura del electrodo es determinante: el fieltro de grafito no funcionó por su porosidad.</p></li>
-      <li data-r><span class="n">03</span><p>La integral resume o acumula lo que la celda produce en el tiempo, y aprovechar el lactosuero aporta al cuidado del agua.</p></li>
+      <li data-r><span class="n">01</span><p>La bacteria <em class="sp">Geobacter sulfurreducens</em> puede crecer en lactosuero y formar una biopelícula sobre electrodos de grafito.</p></li>
+      <li data-r><span class="n">02</span><p>Las características del electrodo influyen en la formación de la biopelícula. <span class="d">En el estudio presentado, el fieltro de grafito no ofreció los resultados esperados.</span></p></li>
+      <li data-r><span class="n">03</span><p>El cálculo integral permite estudiar el comportamiento de la celda y calcular cantidades como la carga eléctrica y la energía producida. <span class="d">Además, aprovechar el lactosuero representa una alternativa para reducir el desperdicio de este residuo.</span></p></li>
     </ol>
   </div>
 </section>
@@ -725,8 +746,8 @@ html.static .progress,html.static .foot .pdf{display:none}
 
   var mm=gsap.matchMedia();
   mm.add({
-    desk:'screen and (min-width:761px) and (prefers-reduced-motion:no-preference)',
-    mob:'screen and (max-width:760px) and (prefers-reduced-motion:no-preference)'
+    desk:'screen and (min-width:1001px) and (prefers-reduced-motion:no-preference)',
+    mob:'screen and (max-width:1000px) and (prefers-reduced-motion:no-preference)'
   }, function(ctx){
     var desk=ctx.conditions.desk, lenis=null, tick=null, added=[];
     var S=desk?0.9:0.5;
@@ -767,7 +788,7 @@ html.static .progress,html.static .foot .pdf{display:none}
       var steps=$('.step',cell), nums=$('.step .n',cell), dots=$('.dots i',cell), fig=cell.querySelector('.fig');
       var org=$('.f1-org circle',cell), wireE=$('.f1-wire-e',cell), piliE=$('.f1-pili-e',cell),
           pili=$('.f1-pili path',cell), bio=$('.f1-bio use',cell);
-      var pinA=desk && (fig.offsetHeight + rem*10) < vh;
+      var pinA=desk && (Math.max(fig.offsetHeight, rem*36) + rem*8) < vh;
       if(pinA) mark(cell,'pinned');
 
       gsap.set(pili,{strokeDasharray:'1 1',strokeDashoffset:1});
@@ -792,7 +813,7 @@ html.static .progress,html.static .foot .pdf{display:none}
         }
       };
 
-      /* 1 · La bacteria metaboliza la materia orgánica */
+      /* 1 · La bacteria utiliza la materia orgánica */
       on(0,0);
       tl.fromTo(org,{x:36,y:-42,opacity:0},{x:0,y:0,opacity:1,duration:0.45,stagger:0.06},0.1)
         .to($('.f1-orgarrow',cell),{opacity:1,duration:0.15},0.6)
